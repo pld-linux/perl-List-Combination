@@ -32,9 +32,8 @@ cd %{_builddir}/List-Combination-%{version}
 
 %build
 cd %{_builddir}/%{pdir}-%{pnam}-%{version}
-echo 'use ExtUtils::MakeMaker; WriteMakefile(NAME=>"List::Combination",
-      VERSION_FROM=>"Combination.pm")' > Makefile.PL
-perl Makefile.PL
+touch Makefile.PL
+perl -MExtUtils::MakeMaker -e 'WriteMakefile(NAME=>"List::Combination");'
 %{__make}
 
 %install
