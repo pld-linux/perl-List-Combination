@@ -5,12 +5,12 @@ Summary:	List::Combination - an iterator over the combinations of an array
 Summary(pl):	List::Combination - iterator po kombinacjach tablicy
 Name:		perl-List-Combination
 Version:	1.00
-Release:	1
+Release:	2
 License:	?
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.pm.gz
 BuildRequires:	perl >= 5.6.1
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,7 +28,8 @@ kombinacjach obiektów tablicy.
 
 %build
 touch Makefile.PL
-%{__perl} -MExtUtils::MakeMaker -e 'WriteMakefile(NAME=>"List::Combination");'
+%{__perl} -MExtUtils::MakeMaker -e 'WriteMakefile(NAME=>"List::Combination");' \
+	INSTALLDIRS=vendor
 %{__make}
 
 %install
@@ -41,5 +42,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{perl_sitelib}/%{pdir}/*.pm
+%{perl_vendorlib}/%{pdir}/*.pm
 %{_mandir}/man3/*
