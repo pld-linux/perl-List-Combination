@@ -1,14 +1,14 @@
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	List
-%define	pnam	Combination
-Summary:	%{pdir}::%{pnam} -- An iterator over the combinations of an array.
-Summary(pl):	%{pdir}::%{pnam} -- Iterator po kombinacjach tablicy.
-Name:		perl-%{pdir}-%{pnam}
+%define		pdir	List
+%define		pnam	Combination
+Summary:	List::Combination - an iterator over the combinations of an array
+Summary(pl):	List::Combination - iterator po kombinacjach tablicy
+Name:		perl-List-Combination
 Version:	1.00
 Release:	1
 License:	?
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.pm.gz
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.pm.gz
 BuildRequires:	perl >= 5.6.1
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildArch:	noarch
@@ -23,7 +23,7 @@ Ta klasa daje mo¿liwo¶æ iterowania po wszystkich (danej d³ugo¶ci)
 kombinacjach obiektów tablicy.
 
 %prep
-%setup -n %{name}-%{version} -c -T
+%setup -q -n %{name}-%{version} -c -T
 %{__gzip} -dc %{_sourcedir}/List-Combination-%{version}.pm.gz > Combination.pm
 
 %build
