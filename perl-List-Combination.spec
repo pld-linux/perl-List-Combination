@@ -6,7 +6,7 @@ Summary(pl):	List::Combination - iterator po kombinacjach tablicy
 Name:		perl-List-Combination
 Version:	1.00
 Release:	2
-License:	?
+License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.pm.gz
 # Source0-md5:	15f3e07012320c5a1c9d91f40ac03550
