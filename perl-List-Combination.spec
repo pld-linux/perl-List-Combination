@@ -9,6 +9,7 @@ Release:	2
 License:	?
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.pm.gz
+# Source0-md5:	15f3e07012320c5a1c9d91f40ac03550
 BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
