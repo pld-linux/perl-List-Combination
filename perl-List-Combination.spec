@@ -24,7 +24,7 @@ Ta klasa daje mo¿liwo¶æ iterowania po wszystkich (danej d³ugo¶ci)
 kombinacjach obiektów tablicy.
 
 %prep
-%setup -q -n %{name}-%{version} -c -T
+%setup -q -c -T
 %{__gzip} -dc %{_sourcedir}/List-Combination-%{version}.pm.gz > Combination.pm
 
 %build
@@ -36,7 +36,8 @@ touch Makefile.PL
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
