@@ -1,0 +1,52 @@
+%include	/usr/lib/rpm/macros.perl
+%define	pdir	List
+%define	pnam	Combination
+Summary:	%{pdir}::%{pnam} -- An iterator over the combinations of an array.
+Summary(pl):	%{pdir}::%{pnam} -- Iterator po kombinacjach tablicy.
+Name:		perl-%{pdir}-%{pnam}
+Version:	1.00
+Release:	1
+License:	?
+Group:		Development/Languages/Perl
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.pm.gz
+BuildRequires:	perl >= 5.6.1
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+This class provides the ability to iterate over all the combinations,
+of a given size, of the objects in an array.
+
+%description -l pl
+Ta klasa daje mo¿liwo¶æ iterowania po wszystkich (danej d³ugo¶ci)
+kombinacjach obiektów tablicy.
+
+%prep
+%{__rm} -rf %{_builddir}/List-Combination-%{version}
+%{__mkdir} %{_builddir}/List-Combination-%{version}
+cd %{_builddir}/List-Combination-%{version}
+%{__cp} %{_sourcedir}/List-Combination-%{version}.pm.gz .
+%{__gzip} -d List-Combination-%{version}.pm.gz
+%{__mv} List-Combination-%{version}.pm Combination.pm
+
+%build
+cd %{_builddir}/%{pdir}-%{pnam}-%{version}
+echo 'use ExtUtils::MakeMaker; WriteMakefile(NAME=>"List::Combination",
+      VERSION_FROM=>"Combination.pm")' > Makefile.PL
+perl Makefile.PL
+%{__make}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+cd %{_builddir}/%{pdir}-%{pnam}-%{version}
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%{perl_sitelib}/%{pdir}/*.pm
+%{_mandir}/man3/*
