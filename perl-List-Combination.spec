@@ -5,7 +5,7 @@ Summary:	List::Combination - an iterator over the combinations of an array
 Summary(pl):	List::Combination - iterator po kombinacjach tablicy
 Name:		perl-List-Combination
 Version:	1.00
-Release:	2
+Release:	3
 License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.pm.gz
