@@ -28,7 +28,7 @@ kombinacjach obiektów tablicy.
 
 %build
 touch Makefile.PL
-perl -MExtUtils::MakeMaker -e 'WriteMakefile(NAME=>"List::Combination");'
+%{__perl} -MExtUtils::MakeMaker -e 'WriteMakefile(NAME=>"List::Combination");'
 %{__make}
 
 %install
