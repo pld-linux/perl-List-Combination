@@ -23,15 +23,10 @@ Ta klasa daje mo¿liwo¶æ iterowania po wszystkich (danej d³ugo¶ci)
 kombinacjach obiektów tablicy.
 
 %prep
-%{__rm} -rf %{_builddir}/List-Combination-%{version}
-%{__mkdir} %{_builddir}/List-Combination-%{version}
-cd %{_builddir}/List-Combination-%{version}
-%{__cp} %{_sourcedir}/List-Combination-%{version}.pm.gz .
-%{__gzip} -d List-Combination-%{version}.pm.gz
-%{__mv} List-Combination-%{version}.pm Combination.pm
+%setup -n %{name}-%{version} -c -T
+%{__gzip} -dc %{_sourcedir}/List-Combination-%{version}.pm.gz > Combination.pm
 
 %build
-cd %{_builddir}/%{pdir}-%{pnam}-%{version}
 touch Makefile.PL
 perl -MExtUtils::MakeMaker -e 'WriteMakefile(NAME=>"List::Combination");'
 %{__make}
@@ -39,7 +34,6 @@ perl -MExtUtils::MakeMaker -e 'WriteMakefile(NAME=>"List::Combination");'
 %install
 rm -rf $RPM_BUILD_ROOT
 
-cd %{_builddir}/%{pdir}-%{pnam}-%{version}
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 %clean
