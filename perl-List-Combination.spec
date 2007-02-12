@@ -2,7 +2,7 @@
 %define		pdir	List
 %define		pnam	Combination
 Summary:	List::Combination - an iterator over the combinations of an array
-Summary(pl):	List::Combination - iterator po kombinacjach tablicy
+Summary(pl.UTF-8):   List::Combination - iterator po kombinacjach tablicy
 Name:		perl-List-Combination
 Version:	1.00
 Release:	3
@@ -19,9 +19,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This class provides the ability to iterate over all the combinations,
 of a given size, of the objects in an array.
 
-%description -l pl
-Ta klasa daje moøliwo∂Ê iterowania po wszystkich (danej d≥ugo∂ci)
-kombinacjach obiektÛw tablicy.
+%description -l pl.UTF-8
+Ta klasa daje mo≈ºliwo≈õƒá iterowania po wszystkich (danej d≈Çugo≈õci)
+kombinacjach obiekt√≥w tablicy.
 
 %prep
 %setup -q -c -T
