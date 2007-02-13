@@ -2,7 +2,7 @@
 %define		pdir	List
 %define		pnam	Combination
 Summary:	List::Combination - an iterator over the combinations of an array
-Summary(pl.UTF-8):   List::Combination - iterator po kombinacjach tablicy
+Summary(pl.UTF-8):	List::Combination - iterator po kombinacjach tablicy
 Name:		perl-List-Combination
 Version:	1.00
 Release:	3
