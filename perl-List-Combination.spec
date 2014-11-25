@@ -1,6 +1,6 @@
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	List
 %define		pnam	Combination
+%include	/usr/lib/rpm/macros.perl
 Summary:	List::Combination - an iterator over the combinations of an array
 Summary(pl.UTF-8):	List::Combination - iterator po kombinacjach tablicy
 Name:		perl-List-Combination
@@ -10,6 +10,7 @@ License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.pm.gz
 # Source0-md5:	15f3e07012320c5a1c9d91f40ac03550
+URL:		http://search.cpan.org/dist/List-Combination/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
