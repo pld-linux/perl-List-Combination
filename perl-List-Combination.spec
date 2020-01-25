@@ -1,6 +1,5 @@
 %define		pdir	List
 %define		pnam	Combination
-%include	/usr/lib/rpm/macros.perl
 Summary:	List::Combination - an iterator over the combinations of an array
 Summary(pl.UTF-8):	List::Combination - iterator po kombinacjach tablicy
 Name:		perl-List-Combination
